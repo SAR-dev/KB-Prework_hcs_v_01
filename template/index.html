@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/styles.css">
+    <title>MiCOL</title>
+
+</head>
+
+<body style="background-color: #F6F6F6;">
+    <div>
+        <nav class="bg-blue-900">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-8" src="https://www.micol.life/assets/img/common/micol-logo-w.svg"
+                                alt="Workflow" />
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-center space-x-4">
+                                <div class="mt-1 relative rounded">
+                                    <input type="text" name="price" id="price"
+                                        class="h-8 focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded pl-5"
+                                        placeholder="Product Name" style="width: 27rem" />
+                                    <div class="absolute inset-y-0 right-0 flex items-center py-0.5 pr-0.5">
+                                        <button
+                                            class="focus:ring-transparent focus:bg-gray-200 hover:bg-gray-200 h-full py-0 bg-gray-100 text-gray-500 rounded-r-md rounded-l-none px-2 focus:outline-none">
+                                            <svg class="flex m-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button
+                                    class="text-white hover:text-gray-200 p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-white mx-2">
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                    </svg>
+                                </button>
+                                <button
+                                    class="text-white hover:text-gray-200 p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-white mx-2">
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center md:ml-6">
+                            <span
+                                class="px-3 py-1 rounded-full bg-blue-800 text-white text-sm border border-blue-700 mx-2">3,000円以上送料無料</span>
+                            <button tooltip="FAQ" placement="bottom" show-delay="100"
+                                class="text-white hover:text-gray-200 p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-white mx-2">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </button>
+                            <button tooltip="Favourites" placement="bottom" show-delay="100"
+                                class="text-white hover:text-gray-200 p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-white mx-2">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                            <button tooltip="Cart" placement="bottom" show-delay="100" (click)="toogleCartportal()"
+                                class="relative text-white hover:text-gray-200 p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-white mx-2">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                <span class="absolute h-3 w-3 bg-red-500 rounded-full absolute top-0 right-0"></span>
+                            </button>
+                            <div class="ml-3 relative">
+                                <div>
+                                    <button
+                                        class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none ring-2 ring-offset-2 ring-offset-gray-800 ring-white"
+                                        id="user-menu" aria-haspopup="true">
+                                        <img class="h-8 w-8 rounded-full"
+                                            src="./static/images/demo_profile.jpg"
+                                            alt="" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="flex bg-gray-50 h-full">
+            <div class="max-w-7xl w-full mx-auto p-8 my-10">
+                <!-- PAGE COMPONENT STARTS HERE -->
+				
+                <div class="grid grid-cols-2">
+                    <div class="w-9/12 p-5 ml-8 bg-gray-200 relative">
+					  <img src="../static/images/slider_side_text.png" class="rotated-image" alt="">
+                        <div style="height: 415px;">
+							<p class="pb-2 text-red-600 text-center font-semibold">より良い結果を得るためにカメラの近くにいてください!</p>
+							<div class="img-comp-container">
+							  <div class="img-comp-img">
+								<img id="image" src=""  style="height: 415px; width: 415px;">
+							  </div>
+							  <div class="img-comp-img img-comp-overlay">
+								<video id="video" style="height: 415px; width: 415px; max-width: none;" autoplay style="background-color: grey"></video>
+							  </div>
+							</div>
+							
+                        </div>
+						
+                        <div class="flex pt-10 pb-2">
+                         
+                            <button onClick="captureImage()" type="button"
+                                class="ml-auto flex items-center bg-blue-700 px-1 w-30 justify-center border border-blue-600 rounded-md shadow-sm text-sm leading-4 font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+									</svg>
+                                画像をキャプチャする
+                            </button>
+                        </div>
+                    </div>
+                    <div class="my-auto">
+                        <img src="./static/images/0njfWvN.png" class="w-full h-32 object-cover">
+                        <div class="my-5">
+                            <div class="text-2xl font-semibold text-gray-700">カラーパレット</div>
+                            <div class="text-lg font-semibold text-gray-700">新しい髪の色を選択してください!
+                            </div>
+                            <div class="mt-4 text-sm text-gray-500 bg-gray-200 p-4 rounded">
+                                "ヘアカラーシミュレーションを使用することで、'MiCOL'が私のイメージを処理する可能性があることを理解しています"
+                            </div>
+                        </div>
+                        <div class="w-full grid grid-cols-5 gap-4 mt-3" id="hair-colors">								
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- PAGE COMPONENT ENDS HERE -->
+            </div>
+        </div>
+    </div>
+	<script src="{{ url_for('static', filename='main.js') }}" type="text/javascript"></script>
+	<script>
+		/* video comparison */
+		initComparisons();
+    </script>
+</body>
+
+</html>
